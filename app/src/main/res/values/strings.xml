@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">MCC</string>
+    <string name="tanggal">Tanggal</string>
+    <string name="attendance_date">12 - 11 - 2022</string>
+    <string name="waktu_masuk">Waktu Masuk</string>
+    <string name="default_time">11 - 11 - 2022</string>
+    <string name="waktu_keluar">Waktu Keluar</string>
+    <string name="absen_masuk">Absen Masuk</string>
+    <string name="absen_pulang">Absen Pulang</string>
+    <string name="map_in">Map Masuk</string>
+    <string name="map_out">Map Keluar</string>
+</resources>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.LoginActivity">
+
+    <LinearLayout
+        android:id="@+id/llHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/ll_login">
+        <ImageView
+            android:id="@+id/ivLogo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_logo"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+        <TextView
+            android:id="@+id/tvAppNameRow1"
+            android:textColor="#d40000"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="5"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:text="TURJAWALI"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/poor_rich_regular"
+            app:layout_constraintTop_toBottomOf="@id/ivLogo"/>
+        <TextView
+            android:id="@+id/tvAppNameRow2"
+            android:textColor="#d40000"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="5"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:text="Mobile Command Center"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/poor_rich_regular"
+            app:layout_constraintTop_toBottomOf="@id/tvAppNameRow1"/>
+
+        <TextView
+            android:id="@+id/tvAppNameRow3"
+            android:textColor="#d40000"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="5"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/poor_rich_regular"
+            app:layout_constraintTop_toBottomOf="@id/tvAppNameRow2"/>
+    </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="64dp"
+            app:boxStrokeColor="#d40000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <EditText
+                android:id="@+id/username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_user_1"
+                android:drawablePadding="10dp"
+                android:textColor="#d40000"
+                android:hint="Username"
+                tools:layout_editor_absoluteX="11dp"
+                tools:layout_editor_absoluteY="301dp"
+                android:autofillHints="name"
+                android:inputType="textEmailAddress" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginHorizontal="64dp"
+            app:passwordToggleEnabled="true"
+            app:boxStrokeColor="@color/teal_200"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <EditText
+                android:id="@+id/et_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_alarm_code"
+                android:drawablePadding="10dp"
+                android:hint="Password"
+                android:inputType="numberPassword"
+                tools:layout_editor_absoluteX="11dp"
+                tools:layout_editor_absoluteY="301dp"
+                android:autofillHints="name" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginHorizontal="64dp"
+            android:text="Masuk"
+            android:backgroundTint="#d40000"/>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

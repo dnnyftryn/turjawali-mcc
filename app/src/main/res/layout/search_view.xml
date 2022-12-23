@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.SearchView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bar"
+    style="@style/SearchViewStyle"
+    android:layout_width="match_parent"
+    android:layout_height="45dp"
+    android:background="@drawable/custom_input"
+    android:forceDarkAllowed="false"
+    app:closeIcon="@drawable/ic_close"
+    app:searchIcon="@drawable/ic_search_circle"
+    app:iconifiedByDefault="false"
+    android:focusable="false"
+    tools:targetApi="q" />

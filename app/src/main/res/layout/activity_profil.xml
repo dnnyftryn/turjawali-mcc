@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/officer_profile"
+    tools:context=".activity.detail.ProfilActivity">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/container_profile_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@android:color/transparent"
+        app:cardElevation="0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="50dp">
+
+
+            <!-- Nama -->
+            <TextView
+                android:id="@+id/textViewFullname"
+                style="@style/TextAppearance.AppCompat.Medium"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:text="Nama"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/imageViewProfile"
+                app:layout_constraintStart_toStartOf="@id/container_user_data"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <!-- Email -->
+            <TextView
+                android:id="@+id/textViewEmail"
+                style="@style/TextAppearance.AppCompat.Small"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Email"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toStartOf="@+id/imageViewProfile"
+                app:layout_constraintStart_toStartOf="@id/container_user_data"
+                app:layout_constraintTop_toBottomOf="@id/textViewFullname" />
+
+            <!-- user profil foto -->
+            <ImageView
+                android:id="@+id/imageViewProfile"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginEnd="10dp"
+                app:layout_constraintBottom_toBottomOf="@id/textViewEmail"
+                app:layout_constraintEnd_toEndOf="@+id/container_user_data"
+                app:layout_constraintStart_toEndOf="@id/textViewFullname"
+                app:layout_constraintTop_toTopOf="@id/textViewFullname"
+                app:layout_constraintVertical_bias="0.3" />
+
+            <!-- user detail -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/container_user_data"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="10dp"
+                app:cardUseCompatPadding="false"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imageViewProfile"
+                app:layout_constraintVertical_bias="0.05">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:background="@color/white_smoke"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/textViewUserId"
+                        style="@style/TextAppearance.AppCompat.Medium"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textColor="#808080"
+                        app:layout_constraintBottom_toBottomOf="@id/imageViewProfileSmall"
+                        app:layout_constraintEnd_toStartOf="@id/imageViewProfileSmall"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/imageViewProfileSmall" />
+
+                    <ImageView
+                        android:id="@+id/imageViewProfileSmall"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:src="@drawable/ic_user"
+                        app:layout_constraintBottom_toTopOf="@id/view_offset_helper"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/textViewUserId"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <View
+                        android:id="@+id/view_offset_helper"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/darker_gray"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/imageViewProfileSmall" />
+
+                    <TextView
+                        android:id="@+id/tvProfile2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Profil"
+                        android:textColor="@color/darker_gray"
+                        app:layout_constraintBottom_toTopOf="@id/textViewCustID"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/view_offset_helper" />
+
+                    <TextView
+                        android:id="@+id/textViewCustID"
+                        style="@style/TextAppearance.AppCompat.Small"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        app:layout_constraintBottom_toTopOf="@id/tvProfile3"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@id/tvProfile2"
+                        app:layout_constraintTop_toBottomOf="@id/tvProfile2" />
+
+                    <TextView
+                        android:id="@+id/tvProfile3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="site id"
+                        android:textColor="@color/darker_gray"
+                        app:layout_constraintBottom_toTopOf="@id/textViewSiteID"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/textViewCustID" />
+
+                    <TextView
+                        android:id="@+id/textViewSiteID"
+                        style="@style/TextAppearance.AppCompat.Small"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        app:layout_constraintBottom_toTopOf="@id/tvProfile4"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@id/tvProfile3"
+                        app:layout_constraintTop_toBottomOf="@id/tvProfile3" />
+
+                    <TextView
+                        android:id="@+id/tvProfile4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="officer id"
+                        android:textColor="@color/darker_gray"
+                        app:layout_constraintBottom_toTopOf="@id/textViewUserIntersite"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/textViewSiteID" />
+
+                    <TextView
+                        android:id="@+id/textViewUserIntersite"
+                        style="@style/TextAppearance.AppCompat.Small"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="-"
+                        android:textColor="@color/black"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@id/tvProfile4"
+                        app:layout_constraintTop_toBottomOf="@id/tvProfile4" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/edit_Pw"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Ubah Pin"
+                android:textColor="@color/white"
+                android:background="@drawable/custom_button"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/container_user_data" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</ScrollView>

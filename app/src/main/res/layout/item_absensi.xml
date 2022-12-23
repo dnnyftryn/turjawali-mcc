@@ -1,0 +1,333 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/color_palette_3"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/parentCardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="2dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <!-- officer id -->
+            <TextView
+                android:id="@+id/textViewOfficerId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:text="Officer ID"
+                android:textAlignment="textStart"
+                android:textAllCaps="true"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <!-- divider -->
+            <View
+                android:id="@+id/vAttendance1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/textViewOfficerId"
+                android:layout_marginVertical="5dp"
+                android:background="@color/color_palette_3" />
+
+            <TextView
+                android:id="@+id/tvAttendanceDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/vAttendance1"
+                android:text="@string/tanggal"
+                android:textAlignment="textStart"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textColor="@color/black" />
+
+            <!-- tanggal absen -->
+            <TextView
+                android:id="@+id/textViewAttdDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/vAttendance1"
+                android:layout_marginEnd="1dp"
+                android:layout_marginBottom="5dp"
+                android:layout_toEndOf="@id/tvAttendance2"
+                android:text="@string/attendance_date"
+                android:textAlignment="textStart"
+                android:textColor="@color/gray" />
+
+            <TextView
+                android:id="@+id/tvAttendance2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textViewAttdDate"
+                android:layout_marginEnd="20dp"
+                android:text="@string/waktu_masuk"
+                android:textAlignment="textStart"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textColor="@color/black" />
+
+            <!-- waktu masuk / datang -->
+            <TextView
+                android:id="@+id/textViewActualTimeIn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textViewAttdDate"
+                android:layout_marginEnd="1dp"
+                android:layout_marginBottom="5dp"
+                android:layout_toEndOf="@id/tvAttendance2"
+                android:text="@string/default_time"
+                android:textAlignment="textStart"
+                android:textColor="@color/gray" />
+
+            <TextView
+                android:id="@+id/tvAttendance3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textViewActualTimeIn"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="20dp"
+                android:text="@string/waktu_keluar"
+                android:textAlignment="textStart"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textColor="@color/black" />
+
+            <!-- waktu keluar / pulang -->
+            <TextView
+                android:id="@+id/textViewActualTimeOut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textViewActualTimeIn"
+                android:layout_marginEnd="1dp"
+                android:layout_toEndOf="@id/tvAttendance2"
+                android:text="@string/default_time"
+                android:textAlignment="textStart"
+                android:textColor="@color/gray" />
+
+            <!-- divider -->
+            <View
+                android:id="@+id/vAttendance2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/textViewActualTimeOut"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:background="@color/color_palette_3" />
+
+            <!-- gambar dan tombol absensi -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clAttendance1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/vAttendance2"
+                android:layout_marginTop="10dp">
+
+                <!-- gambar absen masuk -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvAbsenMasuk"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardElevation="0dp"
+                    app:layout_constraintBottom_toTopOf="@id/buttonLocIn"
+                    app:layout_constraintEnd_toStartOf="@+id/view_offset_helper"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:weightSum="5">
+
+                        <ImageView
+                            android:id="@+id/ivAbsenMasuk"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:background="@color/white"
+                            android:src="@drawable/ic_download_image" />
+
+                        <TextView
+                            style="@style/TextAppearance.AppCompat.Caption"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|center_horizontal"
+                            android:layout_weight="1"
+                            android:text="@string/absen_masuk" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <!-- gambar absen pulang -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvAbsenPulang"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardElevation="0dp"
+                    app:layout_constraintBottom_toTopOf="@id/buttonLocOut"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/view_offset_helper"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:weightSum="5">
+
+                        <ImageView
+                            android:id="@+id/ivAbsenPulang"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:background="@color/white"
+                            android:src="@drawable/notfound" />
+
+                        <TextView
+                            style="@style/TextAppearance.AppCompat.Caption"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|center_horizontal"
+                            android:layout_weight="1"
+                            android:text="@string/absen_pulang" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <!-- tombol maps absen masuk -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/buttonLocIn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    app:cardBackgroundColor="@color/color_palette_2"
+                    app:cardCornerRadius="7dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/view_offset_helper"
+                    app:layout_constraintHorizontal_weight="4.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cvAbsenMasuk">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:paddingTop="7dp"
+                        android:paddingBottom="7dp"
+                        tools:ignore="UseCompoundDrawables">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginEnd="10dp"
+                            android:contentDescription="@string/app_name"
+                            android:src="@drawable/ic_map"
+                            app:tint="@color/white" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/map_in"
+                            android:textAlignment="center"
+                            android:textAppearance="@style/TextAppearance.AppCompat"
+                            android:textColor="@color/white" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <!-- tombol maps absen pulang -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/buttonLocOut"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    app:cardBackgroundColor="@color/color_palette_2"
+                    app:cardCornerRadius="7dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_weight="4.5"
+                    app:layout_constraintStart_toEndOf="@id/view_offset_helper"
+                    app:layout_constraintTop_toBottomOf="@+id/cvAbsenPulang">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:paddingTop="7dp"
+                        android:paddingBottom="7dp"
+                        tools:ignore="UseCompoundDrawables">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginEnd="10dp"
+                            android:contentDescription="@string/app_name"
+                            android:src="@drawable/ic_map"
+                            app:tint="@color/white" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/map_out"
+                            android:textAlignment="center"
+                            android:textAppearance="@style/TextAppearance.AppCompat"
+                            android:textColor="@color/white" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <!-- divider -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/view_offset_helper"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:cardBackgroundColor="@android:color/transparent"
+                    app:cardCornerRadius="0dp"
+                    app:cardElevation="0dp"
+                    app:layout_constraintBottom_toBottomOf="@id/buttonLocIn"
+                    app:layout_constraintEnd_toStartOf="@id/buttonLocOut"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintStart_toEndOf="@id/buttonLocIn"
+                    app:layout_constraintTop_toTopOf="@id/buttonLocIn" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!--            <CheckBox-->
+            <!--                android:id="@+id/checkBoxReport"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_below="@+id/clAttendance1"-->
+            <!--                android:layout_marginTop="10dp"-->
+            <!--                android:text="@string/tampilkan_pada_laporan"-->
+            <!--                android:textAlignment="textStart"-->
+            <!--                android:textAllCaps="true"-->
+            <!--                android:textAppearance="@style/TextAppearance.AppCompat"-->
+            <!--                android:textColor="@color/black"-->
+            <!--                android:textStyle="bold"-->
+            <!--                android:translationX="-5dp" />-->
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

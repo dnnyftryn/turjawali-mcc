@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+
+   <LinearLayout
+       android:id="@+id/linearLayout"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="horizontal"
+       android:layout_margin="10dp"
+       app:layout_constraintTop_toTopOf="parent">
+       <ImageView
+           android:id="@+id/ivLogo"
+           android:layout_width="150dp"
+           android:layout_height="150dp"
+           android:src="@drawable/ic_logo"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toTopOf="parent"
+           app:layout_constraintBottom_toBottomOf="parent"/>
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:weightSum="2"
+           android:orientation="vertical">
+           <TextView
+               android:id="@+id/tvAppNameRow1"
+               android:textColor="#d40000"
+               android:layout_width="match_parent"
+               android:layout_height="0dp"
+               android:layout_weight="1"
+               android:gravity="center"
+               android:includeFontPadding="false"
+               android:maxLines="1"
+               android:text="TURJAWALI"
+               android:textSize="45sp"
+               android:textStyle="bold"
+               android:fontFamily="@font/poor_rich_regular"
+               app:layout_constraintTop_toBottomOf="@id/ivLogo"/>
+           <TextView
+               android:id="@+id/tvAppNameRow2"
+               android:textColor="#d40000"
+               android:layout_width="match_parent"
+               android:layout_height="0dp"
+               android:layout_weight="1"
+               android:gravity="center"
+               android:includeFontPadding="false"
+               android:maxLines="1"
+               android:text="Mobile Command Center"
+               android:textSize="25sp"
+               android:textStyle="bold"
+               android:fontFamily="@font/poor_rich_regular"
+               app:layout_constraintTop_toBottomOf="@id/tvAppNameRow1"/>
+       </LinearLayout>
+   </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvSOS"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Terakhir Pengecekan SOS"/>
+
+    <GridView
+        android:id="@+id/gridViewMenu"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="15dp"
+        android:layout_weight="55"
+        android:layout_margin="10dp"
+        android:background="@drawable/menu_background"
+        android:fitsSystemWindows="true"
+        android:gravity="center"
+        android:numColumns="3"
+        android:paddingHorizontal="5dp"
+        android:paddingVertical="10dp"
+        android:stretchMode="columnWidth"
+        tools:listitem="@layout/item_grid" />
+
+
+</LinearLayout>
